@@ -1,0 +1,79 @@
+<html>
+<head>
+<title> AJAX Demo </title>
+<style>
+body{
+	background-color: "#3387b7";
+	text-align: center;
+}
+.displaybox{
+	color: rgb(0,0,255);	
+	margin: auto;
+	width: 350px;
+	border: 2px solid #000000;
+	padding: 10px;
+	align: center;
+	font: 1.5em normal verdana, helvetica, arial; 
+}
+</style>
+<script>
+	var ajaxobject=new XMLHttpRequest();
+	function getList() {
+	  if(!ajaxobject)
+	  {
+	  	document.getElementById("showlist").innerHTML="AJAX obejct could not be created";
+	  	return;
+	  }
+	  	  ajaxobject.open("GET","list.php");
+	  	  ajaxobject.send();
+	  	  ajaxobject.onreadystatechange=getResponse; 	
+	}
+	function getResponse(){
+		if(ajaxobject.readyState == 4 && ajaxobject.status == 200)
+		{
+			document.getElementById('showlist').innerHTML=ajaxobject.responseText;
+		}
+else
+{
+document
+	}
+	var count = 0;
+	function changeColor()
+	{
+		count++;
+		var col="red";
+		if(count%2==0)
+			col="yellow";
+		else
+			col="red";
+	
+		document.getElementById('showlist').style.backgroundColor=col;
+	}
+	function getRes()
+	{
+	document.getElementById('demo').innerHTML=document.getElementById("myform").elements  		['candidate'].value;
+       }
+	function makeItBold()
+	{
+	var voted_for=document.getElementById("myform").elements['candidate'].value;
+        document.getElementById('selectedcandidate').innerHTML=voted_for;
+	//document.getElementById('showtime').style.
+	}
+</script>
+</head>
+	<body onload="getServerTime()">
+		<h1>List of candidates for the post of CR</h1>
+		<h4>Getting the list from the server</h4>
+		<form>
+			<input type="button" value="List the candidates"onclick="getList()"/>
+			<input type="button" value="Change color"onclick="changeColor()"/>
+		</form>
+		<div id="showlist" class="displaybox">
+		
+		</div>
+			<input type="button" value="Submit"onclick="getRes()"/><br />
+
+			<div id="demo" class="displaybox">
+		</div>
+	</body>
+</html>
