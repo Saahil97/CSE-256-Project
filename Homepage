@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>PU Election</title>
+<style>
+body {
+    background-color: lightblue;
+}
+h1 {
+    color: white;
+    text-align: center;
+}
+ 
+</style>
+</head>
+<body>
+<h1>Election form</h1>
+<center><form method="POST" action="check.php">
+  Username: <input type="text" name="username" required><br>
+  Password: <input type="password" name="password" required><br>
+<input type="submit" value="Login">
+</center></form>
+</body>
+</html>
